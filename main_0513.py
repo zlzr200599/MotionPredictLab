@@ -24,5 +24,5 @@ if __name__ == "__main__":
     model.train_model(dataset=data, batch_size=16, shuffle=True,
                       n_epoch=100, lr=0.05,
                       )
-    # model.val_model(dataset=data, return_to_plot=True)
+    model.val_model(dataset=data, return_to_plot=False)
     # model.test_model(dataset=data, output_dir="./test_result_0514_01/")
