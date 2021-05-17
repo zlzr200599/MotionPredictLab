@@ -53,13 +53,11 @@ import os
 import pandas as pd
 import numpy as np
 from anycache import anycache
+import torch
 
-kk = "yes"
-@anycache(cachedir='./tmp/anycache.my')
-def myfunc(posarg, kwarg=3):
-    print("  Calcing %r + %r = %r" % (posarg, kwarg, posarg + kwarg))
-    print(kk)
-    return posarg + kwarg, kk
-
-for i in range(3):
-    print(myfunc(i))
+a = torch.rand((5, 2))
+print(a)
+b = torch.tensor([0,0,1,1,0]).unsqueeze(dim=1)
+print(b)
+c = a*b
+print(c)

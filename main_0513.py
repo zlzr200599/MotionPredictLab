@@ -15,7 +15,7 @@ if __name__ == "__main__":
     data = AllDataset(train_dir=train_dir,
                       train_fraction=1.250,
                       val_dir='/home/huanghao/Lab/argodataset/val/data',
-                      val_fraction=5000/39472,  # 39472
+                      val_fraction=50/39472,  # 39472
                       test_dir=test_dir,
                       test_fraction=1.0,
                       )
