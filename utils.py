@@ -32,3 +32,22 @@ def val_plot(bhg):
     plt.plot(agent[20:, 0], agent[20:, 1], 'b.')
     plt.plot(predict_track[:, 0], predict_track[:, 1], 'y.')
     plt.show()
+
+
+def plot_bhg(bhg, plot_predict=False):
+    agent = bhg.nodes['agent'].data['state'][0]
+    predict_track = bhg.nodes['agent'].data['predict'][0]
+    av = bhg.nodes['av'].data['state'].view(-1, 3)
+    others = bhg.nodes['others'].data['state'].view(-1, 3)
+    lane = bhg.nodes['lane'].data['state'].view(-1, 2)
+
+    plt.figure(figsize=(10, 10))
+    plt.plot(lane[:, 0], lane[:, 1], '.', color="gray")
+    plt.plot(av[:, 1], av[:, 2], '.', color='black')
+    plt.plot(others[:, 1], others[:, 2], 'r.')
+
+    plt.plot(agent[:20, 1], agent[:20, 2], 'go')
+    plt.plot(agent[20:, 1], agent[20:, 2], 'b.')
+    if plot_predict:
+        plt.plot(predict_track[:, 1], predict_track[:, 2], 'y.')
+    plt.show()

@@ -61,3 +61,19 @@ b = torch.tensor([0,0,1,1,0]).unsqueeze(dim=1)
 print(b)
 c = a*b
 print(c)
+a = np.array([1,2,3])
+print(a)
+print(np.concatenate((a,a)))
+
+# av
+        av = av.permute(1, 0, 2)
+        av_code, (av_h_n, av_c_n) = self.av_encoder(av)
+        g.nodes['av'].data['code'] = av_c_n.squeeze(dim=0)
+        # others
+        others = others.permute(1, 0, 2)
+        others_code, (others_h_n, others_c_n) = self.others_encoder(others)
+        g.nodes['others'].data['code'] = others_c_n.squeeze(dim=0)
+        # lane
+        lane = lane.permute(1, 0, 2)
+        lane_code, (lane_h_n, lane_c_n) = self.agent_encoder(lane)
+        g.nodes['lane'].data['code'] = lane_c_n.squeeze(dim=0)
