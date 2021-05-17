@@ -5,10 +5,12 @@
       <paths name="huanghao@192.168.1.7:22">
         <serverdata>
           <mappings>
-            <mapping deploy="/Lab/VectorNet" local="$PROJECT_DIR$" />
+            <mapping deploy="/Lab/MotionPredictLab" local="$PROJECT_DIR$" />
           </mappings>
           <excludedPaths>
-            <excludedPath path="/Lab/VectorNet/data/train" />
+            <excludedPath path="/Lab/MotionPredictLab/data/train" />
+            <excludedPath path="/Lab/MotionPredictLab/data/test" />
+            <excludedPath path="/Lab/MotionPredictLab/data/tmp" />
           </excludedPaths>
         </serverdata>
       </paths>

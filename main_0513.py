@@ -15,14 +15,14 @@ if __name__ == "__main__":
     data = AllDataset(train_dir=train_dir,
                       train_fraction=1.250,
                       val_dir='/home/huanghao/Lab/argodataset/val/data',
-                      val_fraction=30/39472,  # 39472
+                      val_fraction=2000/39472,  # 39472
                       test_dir=test_dir,
                       test_fraction=1.0,
                       )
 
-    model = MyModel(saved_path='new_20210514_0000.pth')
-    model.train_model(dataset=data, batch_size=16, shuffle=True,
-                      n_epoch=100, lr=0.05,
-                      )
+    model = MyModel(saved_path='new_20210517_0000.pth')
+    # model.train_model(dataset=data, batch_size=16, shuffle=True,
+    #                   n_epoch=100, lr=0.05,
+    #                   )
     model.val_model(dataset=data, return_to_plot=False)
     # model.test_model(dataset=data, output_dir="./test_result_0514_01/")
